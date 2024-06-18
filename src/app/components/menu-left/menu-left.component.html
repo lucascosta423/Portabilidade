@@ -1,0 +1,19 @@
+<header class="Menu">
+  <section>
+    <img src="/assets/ULTRACOM.png" alt="">
+  </section>
+
+  <section>
+    <ul>
+      <li (click)="togglePortabilidade()"><i class="bi bi-telephone-fill"></i>Portabilidade</li>
+      <div *ngIf="portabilidadeActive" (click)="event()">
+        <a [routerLink]="['/Portal/Portabilidade']" routerLinkActive="router-link-active" >Lista / Cadastrar</a>
+      </div>
+
+      <li  (click)="toggleCliente()"><i class="bi bi-people-fill"></i>Clientes</li>
+      <div *ngIf="clienteActive" (click)="event()">
+        <a [routerLink]="['/Portal/Cliente']" routerLinkActive="router-link-active" >Lista / Cadastrar</a>
+      </div>
+    </ul>
+  </section>
+</header>

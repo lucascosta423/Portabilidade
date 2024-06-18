@@ -1,0 +1,51 @@
+<main class="main_container">
+  <section>
+    <app-menu-left (click_Event)="click_event()"></app-menu-left>
+  </section>
+  <section>
+
+    <header>
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/024/983/914/small/simple-user-default-icon-free-png.png" alt="">
+      <span>Nome</span>
+    </header>
+
+    <section class="btn_groups" *ngIf="!form_cliente">
+      <div>
+        <i class="bi bi-x-circle-fill"></i>
+        <button>limpa filtro</button>
+      </div>
+      <div>
+        <i class="bi bi-search"></i>
+        <button>filtrar</button>
+      </div>
+      <div (click)="toggleTableList()">
+        <i class="bi bi-plus-lg"></i>
+        <button >Cadastrar Cliente</button>
+      </div>
+    </section>
+
+    <app-cadastrar-cliente [form_cliente]="form_cliente"></app-cadastrar-cliente>
+    <div class="table-responsive" *ngIf="table_List">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Login</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>123</td>
+            <td>Lucas Santos</td>
+            <td>lucas&commat;ultracom.com</td>
+            <td>lucas.santos</td>
+            <td>Ativo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
